@@ -64,7 +64,7 @@ export default {
   height: 50px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: linear-gradient(55deg, #00e0c7, #b0a4e3, #a1afc9);;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
   .hamburger-container {

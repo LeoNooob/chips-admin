@@ -213,10 +213,25 @@ $bg: #2d3a4b;
 $dark_gray: #889aa4;
 $light_gray: #eee;
 
+@keyframes bganimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
 .login-container {
   background-position: 50%;
   background-size: 100%;
   background-attachment: fixed;
+  background-image: linear-gradient(125deg, #006270, #00e0c7, #b0a4e3, #a1afc9);
+  background-size: 170%;
+  animation: bganimation 10s infinite;
   min-height: 100%;
   width: 100%;
   overflow: hidden;
@@ -275,6 +290,7 @@ $light_gray: #eee;
     cursor: pointer;
     user-select: none;
   }
+
 }
 </style>
 
