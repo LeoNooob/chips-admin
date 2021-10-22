@@ -258,7 +258,7 @@ $light_gray: #eee;
       width: 25%;
     }
     .title {
-      font-size: 30px;
+      font: 30px "ExtraThin";
       color: $light_gray;
       margin: 0px auto 40px auto;
       text-align: center;
