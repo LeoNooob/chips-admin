@@ -112,7 +112,7 @@ export default {
       immediate: true
     }
   },
-  mounted() {
+  beforeMount() {
     this.getSavedUsername()
   },
   methods: {

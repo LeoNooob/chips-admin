@@ -12,5 +12,13 @@ module.exports = {
    * @type {boolean} true | false
    * @description Whether show the logo in sidebar
    */
-  sidebarLogo: false
+  sidebarLogo: false,
+  /**
+   * @type {Object}
+   * @description i18n国际化参数
+   */
+  i18n: {
+    default: 'zh-CN',
+    auto: false
+  }
 }
