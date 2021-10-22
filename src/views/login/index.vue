@@ -11,7 +11,7 @@
     >
       <div class="title-container">
         <img class="logo" src="../../assets/images/potato.png">
-        <h2 class="title">MINE-ADMIN</h2>
+        <h2 class="title">CHIPS-ADMIN</h2>
       </div>
       <el-form-item prop="username">
         <span class="svg-container">

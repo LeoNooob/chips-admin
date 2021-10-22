@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'MINE-ADMIN',
+  title: 'CHIPS-ADMIN',
 
   /**
    * @type {boolean} true | false
