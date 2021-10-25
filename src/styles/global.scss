@@ -1,0 +1,171 @@
+// 全局样式
+
+// 框类型
+.el-block {
+    display: block;
+}
+
+.el-inline {
+    display: inline;
+}
+
+.el-inline-block {
+    display: inline-block;
+}
+
+// 文字
+.el-text-center {
+    text-align: center;
+}
+
+.el-text-left {
+    text-align: left;
+}
+
+.el-text-right {
+    text-align: right;
+}
+
+// 浮动
+.el-fl {
+    float: left;
+}
+
+.el-fr {
+    float: right;
+}
+
+.el-clearfix {
+    &:before,&:after{
+        display: table;
+        content: "";
+    }
+    &:after{
+        clear: both;
+    }
+}
+
+// 边框
+.el-b {
+    border: 1px solid #DCDFE6;
+}
+
+.el-bt {
+    border-top: 1px solid #DCDFE6;
+}
+
+.el-bb {
+    border-bottom: 1px solid #DCDFE6;
+}
+
+.el-bl {
+    border-left: 1px solid #DCDFE6;
+}
+
+.el-br {
+    border-right: 1px solid #DCDFE6;
+}
+
+// 边距
+.el-m-0	{ 
+    margin: 0 !important; 
+}
+.el-mt-0 { 	
+    margin-top: 0 !important; 
+}
+.el-mr-0 { 	
+    margin-right: 0 !important; 
+}
+.el-mb-0 { 	
+    margin-bottom: 0 !important; 
+}
+.el-ml-0 { 	
+    margin-left: 0 !important; 
+}
+.el-m-8	{ 
+    margin: 8px !important; 
+}
+.el-mt-8 { 	
+    margin-top: 8px !important; 
+}
+.el-mr-8 { 	
+    margin-right: 8px !important; 
+}
+.el-mb-8 { 	
+    margin-bottom: 8px !important; 
+}
+.el-ml-8 { 	
+    margin-left: 8px !important; 
+}
+.el-p-0	{ 
+    padding: 0 !important; 
+}
+.el-pt-0 { 	
+    padding-top: 0 !important; 
+}
+.el-pr-0 { 	
+    padding-right: 0 !important; 
+}
+.el-pb-0 { 	
+    padding-bottom: 0 !important; 
+}
+.el-pl-0 { 	
+    padding-left: 0 !important; 
+}
+.el-p-8	{ 
+    padding: 8px !important; 
+}
+.el-pt-8 { 	
+    padding-top: 8px !important; 
+}
+.el-pr-8 { 	
+    padding-right: 8px !important; 
+}
+.el-pb-8 { 	
+    padding-bottom: 8px !important; 
+}
+.el-pl-8 { 	
+    padding-left: 8px !important; 
+}
+.el-m-16 {   
+    margin: 16px !important; 
+}
+.el-mt-16 {  
+    margin-top: 16px !important; 
+}
+.el-mr-16 {  
+    margin-right: 16px !important; 
+}
+.el-mb-16 {  
+    margin-bottom: 16px !important; 
+}
+.el-ml-16 {  
+ 	margin-left: 16px !important; 
+}
+.el-p-16 {   
+    padding: 16px !important; 
+}
+.el-pt-16 { 	
+    padding-top: 16px !important; 
+}
+.el-pr-16 { 	
+    padding-right: 16px !important; 
+}
+.el-pb-16 { 	
+    padding-bottom: 16px !important; 
+}
+.el-pl-16 { 	
+    padding-left: 16px !important; 
+}
+
+//边距简写
+.el-m	{ margin: 16px !important;}
+.el-mt	{ margin-top: 16px !important;}
+.el-mr	{ margin-right: 16px !important;}
+.el-mb	{ margin-bottom: 16px !important;}
+.el-ml	{ margin-left: 16px !important;}
+.el-p	{ padding: 16px !important;}
+.el-pt	{ padding-top: 16px !important;}
+.el-pr	{ padding-right: 16px !important;}
+.el-pb	{ padding-bottom: 16px !important;}
+.el-pl	{ padding-left: 16px !important;}

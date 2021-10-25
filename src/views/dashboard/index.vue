@@ -1,42 +1,39 @@
 <template>
   <div class="dashboard-container">
     <!-- <div class="dashboard-text">name: {{ name }}</div> -->
-    <el-row>
-      <el-col :span="8">
-        <div>
-          <img align="center" :src="urlStats">
-        </div>
-      </el-col>
-      <el-col :span="8">
-        <div>
-          <img align="center" :src="urlLang">
-        </div>
-      </el-col>
-      <el-col :span="8">
-        <div>
-          <img align="center" :src="urlWeak">
-        </div>
-      </el-col>
-    </el-row>
+    <div class="dashbord-cards">
+      <card-group />
+    </div>
+    <div class="dashbord-mine">
+      <info-group />
+    </div>
+    <div class="dashbord-chart">
+      <chart-group ref="chart" />
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import CardGroup from './cards'
+import InfoGroup from './infos'
+import ChartGroup from './charts'
 
 export default {
   name: 'Dashboard',
+  components: { CardGroup, InfoGroup, ChartGroup },
   data() {
     return {
-      urlStats: 'https://github-readme-stats.vercel.app/api?username=LeoNooob&count_private=true&show_icons=true&theme=flag-india&include_all_commits=true&hide=stars',
-      urlLang: 'https://github-readme-stats.vercel.app/api/top-langs?username=LeoNooob&layout=compact',
-      urlWeak: 'https://github-readme-stats.vercel.app/api/wakatime?username=LeoNooob'
     }
   },
   computed: {
     ...mapGetters([
       'name'
     ])
+  },
+  mounted() {
+  },
+  beforeDestroy() {
   }
 }
 </script>
@@ -45,9 +42,9 @@ export default {
 .dashboard {
   &-container {
     margin: 30px;
+
   }
   &-text {
-    font-size: 30px;
     line-height: 46px;
   }
 }
