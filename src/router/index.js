@@ -91,6 +91,19 @@ export const constantRoutes = [
   },
 
   {
+    path: '/video',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Video',
+        component: () => import('@/views/video/index'),
+        meta: { title: 'Video', icon: 'el-icon-video-camera-solid' }
+      }
+    ]
+  },
+
+  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
@@ -154,8 +167,8 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'https://github.com/LeoNooob/',
+        meta: { title: 'My Github', icon: 'link' }
       }
     ]
   },
