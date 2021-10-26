@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+
+<svg>
+<metadata>
+Created by webfont
+</metadata>
+<defs>
+
+<font id="Noto Sans S Chinese Thin" horiz-adv-x="1000" vert-adv-y="1000" >
+  <font-face
+    
+    font-family="Noto Sans S Chinese Thin"
+    
+    font-weight="100"
+    
+    font-stretch="normal"
+    
+    units-per-em="1000"
+    
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    
+    ascent="880"
+    
+    descent="-120"
+    
+    x-height="527"
+    
+    cap-height="726"
+    
+    bbox="-991 -1050 2930 1810"
+    
+    underline-thickness="50"
+    
+    underline-position="-100"
+    
+    unicode-range="U+0001-2CE93"
+    
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="cid14" unicode="&#x2d;" d="M44 291h239v-35h-239v35z"  horiz-adv-x="324"   />
+
+    
+    <glyph glyph-name="cid34" unicode="&#x41;" d="M433 258h-294l-91 -258h-37l259 726h33l260 -726h-40zM422 290l-50 145q-23 66 -43 125.5t-40 127.5h-4q-20 -68 -40.5 -127.5t-43.5 -125.5l-51 -145h272z"  horiz-adv-x="574"   />
+
+    
+    <glyph glyph-name="cid37" unicode="&#x44;" d="M268 33q77 0 132.5 25t91 69.5t52 105t16.5 132.5t-16.5 132t-52 103.5t-91 68t-132.5 24.5h-121v-660h121zM110 726h163q84 0 145.5 -26t101.5 -73t59.5 -114t19.5 -148t-19.5 -148t-59 -115.5t-101 -75t-145.5 -26.5h-164v726z"  horiz-adv-x="661"   />
+
+    
+    <glyph glyph-name="cid38" unicode="&#x45;" d="M110 726h390v-33h-353v-289h296v-33h-296v-338h364v-33h-401v726z"  horiz-adv-x="562"   />
+
+    
+    <glyph glyph-name="cid42" unicode="&#x49;" d="M110 726h37v-726h-37v726z"  horiz-adv-x="257"   />
+
+    
+    <glyph glyph-name="cid46" unicode="&#x4d;" d="M110 726h59l155 -438q14 -41 29.5 -81.5t30.5 -82.5h4q15 42 29 82.5t28 81.5l156 438h59v-726h-37v502q0 43 1 94t3 96h-4l-56 -160l-163 -451h-39l-164 451l-57 160h-4q2 -45 3.5 -96t1.5 -94v-502h-35v726z"  horiz-adv-x="770"   />
+
+    
+    <glyph glyph-name="cid47" unicode="&#x4e;" d="M110 726h39l320 -529l83 -143h5q-6 105 -6 205v467h36v-726h-40l-319 529l-83 143h-4q2 -51 3 -99t1 -100v-473h-35v726z"  horiz-adv-x="696"   />
+
+    
+
+  </font>
+</defs></svg>
