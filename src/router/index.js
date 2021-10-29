@@ -78,6 +78,51 @@ export const constantRoutes = [
   },
 
   {
+    path: '/css-example',
+    component: Layout,
+    redirect: '/example/table',
+    meta: { title: 'CSS Example', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'expanding-card',
+        name: 'ExpandingCard',
+        component: () => import('@/views/cssexample/expanding-card'),
+        meta: { title: 'Expanding Card', icon: 'table' }
+      },
+      {
+        path: 'progress-steps',
+        name: 'ProgressSteps',
+        component: () => import('@/views/cssexample/progress-steps'),
+        meta: { title: 'Progress Steps', icon: 'tree' }
+      },
+      {
+        path: 'hidden-search',
+        name: 'HiddenSearch',
+        component: () => import('@/views/cssexample/hidden-search'),
+        meta: { title: 'Hidden Search', icon: 'tree' }
+      },
+      {
+        path: 'blurry-loading',
+        name: 'BlurryLoading',
+        component: () => import('@/views/cssexample/blurry-loading'),
+        meta: { title: 'Blurry Loading', icon: 'tree' }
+      },
+      {
+        path: 'hover-board',
+        name: 'HoverBoard',
+        component: () => import('@/views/cssexample/hover-board'),
+        meta: { title: 'Hover Board', icon: 'tree' }
+      },
+      {
+        path: 'rotating-panel',
+        name: 'RotatingPanel',
+        component: () => import('@/views/cssexample/rotating-panel'),
+        meta: { title: 'Rotating Panel', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
     path: '/form',
     component: Layout,
     children: [
