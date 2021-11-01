@@ -118,12 +118,6 @@ export const constantRoutes = [
         name: 'RotatingPanel',
         component: () => import('@/views/cssexample/rotating-panel'),
         meta: { title: 'Rotating Panel', icon: 'tree' }
-      },
-      {
-        path: 'double-vertical-slider',
-        name: 'DoubleVerticalSlider',
-        component: () => import('@/views/cssexample/double-vertical-slider'),
-        meta: { title: 'Double Vertical Slider', icon: 'tree' }
       }
     ]
   },
@@ -211,6 +205,13 @@ export const constantRoutes = [
         meta: { title: 'menu2' }
       }
     ]
+  },
+
+  {
+    path: '/double-vertical-slider',
+    name: 'DoubleVerticalSlider',
+    component: () => import('@/views/cssexample/double-vertical-slider'),
+    meta: { title: 'Double Vertical Slider (Test)', icon: 'tree' }
   },
 
   {
