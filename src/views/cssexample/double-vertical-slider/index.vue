@@ -2,12 +2,12 @@
   <div class="slider-container">
     <div class="left-slide">
       <div style="background-color: #2A86BA;">
-        <vue-typed-js v-if="activeSlideIndex === 1" :strings="['Haha Byebye']" :cursor-char="'_'">
+        <vue-typed-js v-if="activeSlideIndex === 1" :strings="['Peggys<br/>December 20, 2018']" :cursor-char="'_'" :content-type="'html'">
           <h1 class="typing" />
         </vue-typed-js>
       </div>
       <div style="background-color: #FFB866;">
-        <vue-typed-js v-if="activeSlideIndex === 0" :strings="['Hello My Friend']" :cursor-char="'_'">
+        <vue-typed-js v-if="activeSlideIndex === 0" :strings="['Guangzhou<br/>December 23, 2020']" :cursor-char="'_'" :content-type="'html'">
           <h1 class="typing" />
         </vue-typed-js>
       </div>
@@ -87,7 +87,7 @@ body {
 .slider-container {
   position: relative;
   overflow: hidden;
-  width: 90vw;
+  width: 100%;
   height: 100vh;
 }
 
