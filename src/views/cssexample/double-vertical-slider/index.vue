@@ -2,12 +2,12 @@
   <div class="slider-container">
     <div class="left-slide">
       <div style="background-color: #2A86BA;">
-        <vue-typed-js :strings="['Haha Byebye']" :cursor-char="'_'">
+        <vue-typed-js v-if="activeSlideIndex === 1" :strings="['Haha Byebye']" :cursor-char="'_'">
           <h1 class="typing" />
         </vue-typed-js>
       </div>
       <div style="background-color: #FFB866;">
-        <vue-typed-js :strings="['Hello My Friend']" :cursor-char="'_'">
+        <vue-typed-js v-if="activeSlideIndex === 0" :strings="['Hello My Friend']" :cursor-char="'_'">
           <h1 class="typing" />
         </vue-typed-js>
       </div>
@@ -29,6 +29,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      activeSlideIndex: 0
+    }
+  },
   mounted() {
     const sliderContainer = document.querySelector('.slider-container')
     const slideRight = document.querySelector('.right-slide')
@@ -37,7 +42,7 @@ export default {
     const downButton = document.querySelector('.down-button')
     const slidesLength = slideRight.querySelectorAll('div').length
 
-    let activeSlideIndex = 0
+    const that = this
 
     slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`
 
@@ -47,19 +52,19 @@ export default {
     const changeSlide = (direction) => {
       const sliderHeight = sliderContainer.clientHeight
       if (direction === 'up') {
-        activeSlideIndex++
-        if (activeSlideIndex > slidesLength - 1) {
-          activeSlideIndex = 0
+        that.activeSlideIndex++
+        if (that.activeSlideIndex > slidesLength - 1) {
+          that.activeSlideIndex = 0
         }
       } else if (direction === 'down') {
-        activeSlideIndex--
-        if (activeSlideIndex < 0) {
-          activeSlideIndex = slidesLength - 1
+        that.activeSlideIndex--
+        if (that.activeSlideIndex < 0) {
+          that.activeSlideIndex = slidesLength - 1
         }
       }
 
-      slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
-      slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
+      slideRight.style.transform = `translateY(-${that.activeSlideIndex * sliderHeight}px)`
+      slideLeft.style.transform = `translateY(${that.activeSlideIndex * sliderHeight}px)`
     }
   }
 }
