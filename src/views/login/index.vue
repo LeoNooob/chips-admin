@@ -11,7 +11,10 @@
     >
       <div class="title-container">
         <img class="logo" src="../../assets/images/potato.png">
-        <h2 class="title">CHIPS-ADMIN</h2>
+        <vue-typed-js :strings="['CHIPS-ADMIN']" :cursor-char="''">
+          <!-- <h2 class="typing title" /> -->
+          <h2 class="title"><span class="typing" /></h2>
+        </vue-typed-js>
       </div>
       <el-form-item prop="username">
         <span class="svg-container">
