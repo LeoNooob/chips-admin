@@ -118,6 +118,12 @@ export const constantRoutes = [
         name: 'RotatingPanel',
         component: () => import('@/views/cssexample/rotating-panel'),
         meta: { title: 'Rotating Panel', icon: 'tree' }
+      },
+      {
+        path: 'scroll-panel',
+        name: 'ScrollPanel',
+        component: () => import('@/views/cssexample/scroll-panel'),
+        meta: { title: 'Scroll Panel', icon: 'tree' }
       }
     ]
   },
