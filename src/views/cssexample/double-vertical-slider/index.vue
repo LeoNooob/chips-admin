@@ -1,35 +1,17 @@
 <template>
   <div class="slider-container">
     <div class="left-slide">
-      <div style="background-color: #6495ED;">
-        <vue-typed-js v-if="activeSlideIndex === 3" :strings="['Greenwood<br/>September 3, 2017']" :cursor-char="'_'" :content-type="'html'">
-          <h1 class="typing" />
-        </vue-typed-js>
-      </div>
-      <div style="background-color: #B16347;">
-        <vue-typed-js v-if="activeSlideIndex === 2" :strings="['Wolfville<br/>June 26, 2018']" :cursor-char="'_'" :content-type="'html'">
-          <h1 class="typing" />
-        </vue-typed-js>
-      </div>
-      <div style="background-color: #2A86BA;">
-        <vue-typed-js v-if="activeSlideIndex === 1" :strings="['Peggys<br/>December 20, 2019']" :cursor-char="'_'" :content-type="'html'">
-          <h1 class="typing" />
-        </vue-typed-js>
-      </div>
-      <div style="background-color: #FFB866;">
-        <vue-typed-js v-if="activeSlideIndex === 0" :strings="['Guangzhou<br/>December 23, 2020']" :cursor-char="'_'" :content-type="'html'">
+      <div v-for="item in leftSide" :key="item.index" :style="`background-color: ${item.color};`">
+        <vue-typed-js v-if="activeSlideIndex === item.index" :strings="[`${item.location}<br/>${item.date}`]" :cursor-char="'_'" :content-type="'html'">
           <h1 class="typing" />
         </vue-typed-js>
       </div>
     </div>
     <div class="right-slide">
-      <div style="background-image: url('https://images.unsplash.com/photo-1608709681485-bec9257a3393?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1974&q=80');" />
-      <div style="background-image: url('https://images.unsplash.com/photo-1545268558-b748db4aaf22?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80');" />
-      <div style="background-image: url('https://images.unsplash.com/photo-1561560362-339e2f14a7de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1474&q=80');" />
-      <div style="background-image: url('https://images.unsplash.com/photo-1504371311804-ca5cc55e57a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');" />
+      <div v-for="item in rightSide" :key="item.index" :style="`background-image: url('${item.url}');`" />
     </div>
     <div class="action-buttons">
-      <button class="down-button">
+      <button ref="up" class="down-button">
         <i class="el-icon-caret-bottom" />
       </button>
       <button class="up-button">
@@ -40,16 +22,30 @@
 </template>
 
 <script>
+import { cloneDeep } from 'lodash'
 export default {
   data() {
     return {
-      activeSlideIndex: 0,
+
       list: [
-        { index: 0, color: '#FFB866', location: 'Guangzhou', date: 'December 23, 2020', url: 'https://images.unsplash.com/photo-1608709681485-bec9257a3393?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1974&q=80' },
-        { index: 1, color: '#2A86BA', location: 'Peggys', date: 'December 20, 2019', url: 'https://images.unsplash.com/photo-1545268558-b748db4aaf22?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80' },
-        { index: 2, color: '#B16347', location: 'Wolfville', date: 'June 26, 2018', url: 'https://images.unsplash.com/photo-1561560362-339e2f14a7de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1474&q=80' },
-        { index: 3, color: '#FFB866', location: 'Greenwood', date: 'September 3, 2017', url: 'https://images.unsplash.com/photo-1504371311804-ca5cc55e57a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' }
-      ]
+        { index: 0, color: '#008B8B', location: 'Xiamen', date: 'March 8, 2021', url: 'https://images.unsplash.com/photo-1615209257690-c8a89ae3edb2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1471&q=80' },
+        { index: 1, color: '#574535', location: 'Guangzhou', date: 'December 23, 2020', url: 'https://images.unsplash.com/photo-1608709681485-bec9257a3393?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1974&q=80' },
+        { index: 2, color: '#719A9C', location: 'Peggys', date: 'December 20, 2019', url: 'https://images.unsplash.com/photo-1545268558-b748db4aaf22?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80' },
+        { index: 3, color: '#DE6536', location: 'Wolfville', date: 'June 26, 2018', url: 'https://images.unsplash.com/photo-1561560362-339e2f14a7de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1474&q=80' },
+        { index: 4, color: '#8fabcd', location: 'Greenwood', date: 'September 3, 2017', url: 'https://images.unsplash.com/photo-1504371311804-ca5cc55e57a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' },
+        { index: 5, color: '#3C8AEF', location: 'Montreal', date: 'August 24, 2016', url: 'https://images.unsplash.com/photo-1503520151492-c9dce535f5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80' }
+      ],
+      activeSlideIndex: 0
+    }
+  },
+  computed: {
+    leftSide() {
+      let temp = cloneDeep(this.list)
+      temp = temp.reverse()
+      return temp
+    },
+    rightSide() {
+      return this.list
     }
   },
   mounted() {
@@ -84,12 +80,15 @@ export default {
       slideRight.style.transform = `translateY(-${that.activeSlideIndex * sliderHeight}px)`
       slideLeft.style.transform = `translateY(${that.activeSlideIndex * sliderHeight}px)`
     }
+
+    setInterval(() => {
+      changeSlide('up')
+    }, 15 * 1000)
   }
 }
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 * {
   box-sizing: border-box;
@@ -116,6 +115,7 @@ body {
   top: 0;
   left: 0;
   transition: transform 0.5s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .left-slide > div {
