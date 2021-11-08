@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'HiddenSearch',
   data() {
     return {
       searchword: ''
