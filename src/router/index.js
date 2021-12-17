@@ -221,6 +221,13 @@ export const constantRoutes = [
   },
 
   {
+    path: '/christmas',
+    name: 'Christmas',
+    component: () => import('@/views/christmas'),
+    meta: { title: 'Merry Christmas! My 冰洁', icon: 'tree' }
+  },
+
+  {
     path: 'external-link',
     component: Layout,
     children: [
