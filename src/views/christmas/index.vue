@@ -10,40 +10,38 @@
 </template>
 
 <script>
-import { formatTime, parseTime } from '@/utils'
+import { formatTime, parseTime } from "@/utils";
 export default {
   data() {
     return {
-      letter: [`哈喽？冰洁？看得到么？`]
-    }
+      letter: [`哈喽？冰洁？看得到么？`],
+    };
   },
   beforeMount() {
-      const today = new Date()
-      const memory = new Date('2021-11-27')
-      this.letter.push(
-          `今天是${this.parseTime(today, '{y}年{m}月{d}日')}`)
-    
-        if (parseInt((new Date('2021-12-25') - today) / 1000 / 86400) <= 2) {
-            this.letter.push(`Merry Christmas!`)
-        } else {
-            this.letter.push(`今天只是普普通通的一天，但是`)
-        }
-        this.letter.push(
-          `我们在一起已经有${parseInt((today - memory) / 1000 / 86400)}天`,
-          `虽然在一起的时间不长`,
-          `远不及我们各自过去的千万分之一`,
-          `希望在今后的日子里`,
-          `我们可以共同创造独属于我俩的回忆`,
-          `无论它们是`
-        )
-      
+    const today = new Date();
+    const memory = new Date("2021-11-27");
+    this.letter.push(`今天是${this.parseTime(today, "{y}年{m}月{d}日")}`);
+
+    if (parseInt((new Date("2021-12-25") - today) / 1000 / 86400) <= 2) {
+      this.letter.push(`Merry Christmas!`);
+    } else {
+      this.letter.push(`今天只是普普通通的一天，但是`);
+    }
+    this.letter.push(
+      `我们在一起已经有${parseInt((today - memory) / 1000 / 86400)}天`,
+      `虽然在一起的时间不长`,
+      `远不及我们各自过去的千万分之一`,
+      `希望在今后的日子里`,
+      `我们可以共同创造独属于我俩的回忆`,
+      `无论它们是`
+    );
   },
   mounted() {},
   methods: {
-      parseTime,
-      formatTime
+    parseTime,
+    formatTime,
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
