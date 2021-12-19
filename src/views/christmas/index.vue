@@ -1,8 +1,9 @@
 <template>
   <div class="main">
-    <div v-for="(i, index) in 100" :key="index" class="snow" />
+    <audio ref="audioplayer" :src="bgm" autoplay class="bgm" />
+    <div v-for="(i, index) in 180" :key="index" class="snow" />
     <div class="text">
-      <vue-typed-js :strings="letter" :content-type="'html'" :typedSpeed="200">
+      <vue-typed-js :strings="letter" :content-type="'html'" :typed-speed="500" :back-speed="80">
         <h1 class="typing" />
       </vue-typed-js>
     </div>
@@ -10,38 +11,67 @@
 </template>
 
 <script>
-import { formatTime, parseTime } from "@/utils";
+import { formatTime, parseTime } from '@/utils'
 export default {
   data() {
     return {
-      letter: [`哈喽？冰洁？看得到么？`],
-    };
+      letter: [``, `哈喽？`, `哈喽？`, `冰洁？`, `看得到么？`, `咳咳`],
+      bgm: require('../../assets/twinkle.mp3')
+    }
   },
   beforeMount() {
-    const today = new Date();
-    const memory = new Date("2021-11-27");
-    this.letter.push(`今天是${this.parseTime(today, "{y}年{m}月{d}日")}`);
+    const today = new Date()
+    const memory = new Date('2021-11-27')
+    this.letter.push(`今天是${this.parseTime(today, '{y}年{m}月{d}日')}`)
 
-    if (parseInt((new Date("2021-12-25") - today) / 1000 / 86400) <= 2) {
-      this.letter.push(`Merry Christmas!`);
+    if (parseInt((new Date('2021-12-25') - today) / 1000 / 86400) <= 2) {
+      this.letter.push(`Merry Christmas!`)
     } else {
-      this.letter.push(`今天只是普普通通的一天，但是`);
+      this.letter.push(`今天只是普普通通的一天，但是`)
     }
     this.letter.push(
       `我们在一起已经有${parseInt((today - memory) / 1000 / 86400)}天`,
       `虽然在一起的时间不长`,
-      `远不及我们各自过去的千万分之一`,
-      `希望在今后的日子里`,
-      `我们可以共同创造独属于我俩的回忆`,
-      `无论它们是`
-    );
+      `远不及我们各自过去的千分之一`,
+      `但每当你的手指与我手指交叉时的摩擦感`,
+      `每次双唇交汇时的细腻感`,
+      `以及拥抱时你那轻柔的身体和对视时藏不住的笑颜`,
+      `都已然让我无法忘怀`,
+      `希望今后的日子里`,
+      `我们都会是❤甜❤甜❤蜜❤蜜❤😊`,
+      `虽然...`,
+      `.`,
+      `..`,
+      `...`,
+      `....`,
+      `.....`,
+      `我们之间..`,
+      `免不了会出现无聊和沉默...`,
+      `甚至冒犯，误解和争吵`,
+      `但我坚信彼此能够共同度过这一切`,
+      `将这些不愉快化为我们甜腻回忆中的调味品`,
+      `嘿嘿😉`,
+      `当然我更期待今后与你经历`,
+      `更多的甜蜜`,
+      `更多的温馨`,
+      `更多的激情`,
+      `最终，当我们俩都做好准备的时候`,
+      `我会大声地向喊你`,
+      `老~婆~大~人~`,
+      ``,
+      `我的心永远是冰冰的❤————爱你的旭龙`
+    )
   },
-  mounted() {},
+  mounted() {
+    this.$refs.audioplayer.play()
+  },
+  beforeDestroy() {
+  },
   methods: {
     parseTime,
-    formatTime,
-  },
-};
+    formatTime
+  }
+}
 </script>
 
 <style lang="scss" scoped>
