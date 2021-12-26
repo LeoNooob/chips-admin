@@ -1,11 +1,14 @@
 <template>
   <div class="main">
-    <audio ref="audioplayer" :src="bgm" autoplay class="bgm" />
-    <div v-for="(i, index) in 180" :key="index" class="snow" />
-    <div class="text">
-      <vue-typed-js :strings="letter" :content-type="'html'" :typed-speed="500" :back-speed="80">
-        <h1 class="typing" />
-      </vue-typed-js>
+    <audio ref="audioplayer" :src="bgm" class="bgm" />
+    <h1 v-if="!play" class="text" @click="letsplay()">点开你的惊喜!!!</h1>
+    <div v-else>
+      <div v-for="(i, index) in 180" :key="index" class="snow" />
+      <div class="text">
+        <vue-typed-js :strings="letter" :content-type="'html'" :typed-speed="500" :back-speed="80">
+          <h1 class="typing" />
+        </vue-typed-js>
+      </div>
     </div>
   </div>
 </template>
@@ -16,7 +19,8 @@ export default {
   data() {
     return {
       letter: [``, `哈喽？`, `哈喽？`, `冰洁？`, `看得到么？`, `咳咳`],
-      bgm: require('../../assets/twinkle.mp3')
+      bgm: require('../../assets/twinkle.mp3'),
+      play: false
     }
   },
   beforeMount() {
@@ -24,7 +28,7 @@ export default {
     const memory = new Date('2021-11-27')
     this.letter.push(`今天是${this.parseTime(today, '{y}年{m}月{d}日')}`)
 
-    if (parseInt((new Date('2021-12-25') - today) / 1000 / 86400) <= 2) {
+    if (parseInt((new Date('2021-12-25') - today) / 1000 / 86400) === 2) {
       this.letter.push(`Merry Christmas!`)
     } else {
       this.letter.push(`今天只是普普通通的一天，但是`)
@@ -63,13 +67,23 @@ export default {
     )
   },
   mounted() {
-    this.$refs.audioplayer.play()
   },
   beforeDestroy() {
   },
   methods: {
     parseTime,
-    formatTime
+    formatTime,
+    audioAutoPlay() {
+      var audio = this.$refs.audioplayer
+      audio.play()
+      document.addEventListener('WeixinJSBridgeReady', function() {
+        audio.play()
+      }, false)
+    },
+    letsplay() {
+      this.play = true
+      this.audioAutoPlay()
+    }
   }
 }
 </script>
